@@ -5,22 +5,38 @@ import "./App.css";
 function App() {
   const [movieName, setMovieName] = useState("");
   const [review, setReview] = useState("");
-  const [movieReviewList, setMovieReviewList] = useState([])
+  const [movieReviewList, setMovieReviewList] = useState([]);
+  const [newReview, setNewReview] = useState("");
 
-  useEffect(()=>{
-    Axios.get('http://localhost:3001/api/get').then((response)=>{
-      setMovieReviewList(response.data)
-    })
-  })
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/get").then((response) => {
+      setMovieReviewList(response.data);
+    });
+  }, []);
 
   const enviar = () => {
     Axios.post("http://localhost:3001/api/insert", {
       movieName: movieName,
       movieReview: review,
-    }).then(() => {
-      alert("successful insert");
     });
+    setMovieReviewList([
+      ...movieReviewList,
+      { movieName: movieName, movieReview: review },
+    ]);
   };
+
+  const deleteReview = (movie) => {
+    Axios.delete(`http://localhost:3001/api/delete/${movie}`);
+  };
+
+  const updateReview = (movie) => {
+    Axios.put("http://localhost:3001/api/update", {
+      movieName: movie,
+      movieReview: newReview,
+    });
+    setNewReview("");
+  };
+
   return (
     <div className="App">
       <h1>CRUD APP</h1>
@@ -43,8 +59,34 @@ function App() {
         />
         <button onClick={enviar}>Carregar</button>
       </div>
-      {movieReviewList.map((val)=>{
-        return <h1>MovieName: {val.movieName} | Moview Review: {val.movieReview}</h1>
+      {movieReviewList.map((val) => {
+        return (
+          <div className="card">
+            <h1>{val.movieName}</h1>
+            <p>Moview Review: {val.movieReview}</p>
+            <button
+              onClick={() => {
+                deleteReview(val.movieName);
+              }}
+            >
+              Deletar
+            </button>
+            <input
+              type="text"
+              id="updateInput"
+              onChange={(e) => {
+                setNewReview(e.target.value);
+              }}
+            />
+            <button
+              onClick={() => {
+                updateReview(val.movieName);
+              }}
+            >
+              Atualizar
+            </button>
+          </div>
+        );
       })}
     </div>
   );
