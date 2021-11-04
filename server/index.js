@@ -1,22 +1,37 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors")
 const app = express();
 const mysql = require("mysql");
 
 const db = mysql.createPool({
-  host: 'localhost',       //host
-  user: 'vinicius',        //login
-  password: '12345678vSg', //senha
-  database: 'crud_db'      //nome do schema
+  host: "localhost", //host
+  user: "vinicius", //login
+  password: "12345678vSg", //senha
+  database: "crud_db", //nome do schema
 });
 
-app.get("/", (req, res) => {
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post("/api/insert", (req, res) => {
+  const movieName = req.body.movieName;
+  const movieReview = req.body.movieReview;
   const sqlInsert =
-    'INSERT INTO movie_reviews (movieName, movieReview) VALUES ("filme", "avaliacao");';
-  db.query(sqlInsert, (err, result) => {
-    res.send("Hello World")
+    "INSERT INTO movie_reviews (movieName, movieReview) VALUES (?,?)";
+  db.query(sqlInsert, [movieName, movieReview], (err, result) => {
+    console.log(result);
   });
 });
 
-app.listen(3000, () => {
+app.get("/api/get", (req, res)=>{
+  sqlSelect = "SELECT * FROM movie_reviews"
+  db.query(sqlSelect, (err, result)=>{
+    res.send(result)
+  })
+})
+
+app.listen(3001, () => {
   console.log("Rodando na porta 3001");
 });
