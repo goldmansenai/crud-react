@@ -39,52 +39,71 @@ function App() {
 
   return (
     <div className="App">
-      <h1>CRUD APP</h1>
+      <nav className="navbar navbar-dark bg-dark text-white justify-content-center">CRUD APP</nav>
       <div>
-        <label>Nome</label>
-        <input
-          type="text"
-          name="filme"
-          onChange={(e) => {
-            setMovieName(e.target.value);
-          }}
-        />
-        <label>Review</label>
-        <input
-          type="text"
-          name="review"
-          onChange={(e) => {
-            setReview(e.target.value);
-          }}
-        />
-        <button onClick={enviar}>Carregar</button>
+        <form>
+          <div className="form-group">
+            <label>Nome</label>
+            <input
+              type="text"
+              name="filme"
+              className="form-control"
+              onChange={(e) => {
+                setMovieName(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-group">
+            <label>Review</label>
+            <input
+              type="text"
+              name="review"
+              className="form-control"
+              onChange={(e) => {
+                setReview(e.target.value);
+              }}
+            />
+          </div>
+        </form>
+        <button onClick={enviar} className="btn btn-primary">Carregar</button>
       </div>
       {movieReviewList.map((val) => {
         return (
-          <div className="card">
-            <h1>{val.movieName}</h1>
-            <p>Moview Review: {val.movieReview}</p>
-            <button
-              onClick={() => {
-                deleteReview(val.movieName);
-              }}
-            >
-              Deletar
-            </button>
-            <input
-              type="text"
-              id="updateInput"
-              onChange={(e) => {
-                setNewReview(e.target.value);
-              }}
-            />
-            <button
-              onClick={() => {
-                updateReview(val.movieName);
-              }}
-            >
-              Atualizar
-            </button>
+          <div className="card text-center">
+            <div className="card-header">
+              <h1>{val.movieName}</h1>
+            </div>
+            <div className="card-body">
+              <img src="" />
+              <p>Análise do Filme:</p>
+              <p>{val.movieReview}</p>
+            </div>
+            <div className="card-footer text-muted">
+              <button
+                onClick={() => {
+                  deleteReview(val.movieName);
+                }}
+                className="btn btn-primary"
+              >
+                Deletar
+              </button>
+              <input
+                type="text"
+                id="updateInput"
+                className="form-control"
+                onChange={(e) => {
+                  setNewReview(e.target.value);
+                }}
+              />
+              <button
+                onClick={() => {
+                  updateReview(val.movieName);
+                }}
+                className="btn btn-primary"
+              >
+                Atualizar
+              </button>
+            </div>
           </div>
         );
       })}

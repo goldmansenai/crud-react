@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+.card{
+  margin-top: 16px;
+}
+.card-footer{
+  display: flex;
+}
+
+.form-control{
+  margin: 2px 8px;
+}
