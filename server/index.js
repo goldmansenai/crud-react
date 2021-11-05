@@ -1,9 +1,11 @@
+//BACK-END
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const mysql = require("mysql");
 
+//Conexão com o banco de dados
 const db = mysql.createPool({
   host: "localhost", //host
   user: "vinicius", //login

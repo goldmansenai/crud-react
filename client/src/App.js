@@ -3,14 +3,16 @@ import Axios from "axios";
 import "./App.css";
 
 function App() {
-  const [movieName, setMovieName] = useState("");
-  const [review, setReview] = useState("");
-  const [movieReviewList, setMovieReviewList] = useState([]);
-  const [newReview, setNewReview] = useState("");
+  //useState = Defini o estado de uma variável, portanto
+  const [movieName, setMovieName] = useState(""); //movieName = ""
+  const [review, setReview] = useState(""); //review = ""
+  const [movieReviewList, setMovieReviewList] = useState([]); //movieReviewList = []
+  const [newReview, setNewReview] = useState(""); //newReview = ""
 
   useEffect(() => {
+    //Utilizamos o Axios mas dava pra usar o fetch()
     Axios.get("http://localhost:3001/api/get").then((response) => {
-      setMovieReviewList(response.data);
+      setMovieReviewList(response.data); //movieReviewList = "Dado que o get encontrou no banco"
     });
   }, []);
 
@@ -19,7 +21,9 @@ function App() {
       movieName: movieName,
       movieReview: review,
     });
+    //Dentro da array movieReviewList você tem: [ movieName="x", movieReview="Y" ]
     setMovieReviewList([
+      //Os "..." antes do movieReviewList significa que estamos recriando um objeto 
       ...movieReviewList,
       { movieName: movieName, movieReview: review },
     ]);
@@ -50,6 +54,7 @@ function App() {
               type="text"
               name="filme"
               className="form-control"
+              //Toda vez que o valor do input mudar, o movieName será: "valor do input"
               onChange={(e) => {
                 setMovieName(e.target.value);
               }}
@@ -61,6 +66,7 @@ function App() {
               type="text"
               name="review"
               className="form-control"
+              //Toda vez que o valor do input mudar, o review será: "valor do input"
               onChange={(e) => {
                 setReview(e.target.value);
               }}
