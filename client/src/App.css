@@ -4,7 +4,10 @@
 
 .card{
   margin-top: 16px;
+  max-width: 600px;
+  max-height: 600px;
 }
+
 .card-footer{
   display: flex;
 }

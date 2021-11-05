@@ -39,7 +39,9 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-dark bg-dark text-white justify-content-center">CRUD APP</nav>
+      <nav className="navbar navbar-dark bg-dark text-white justify-content-center">
+        CRUD APP
+      </nav>
       <div>
         <form>
           <div className="form-group">
@@ -65,7 +67,9 @@ function App() {
             />
           </div>
         </form>
-        <button onClick={enviar} className="btn btn-primary">Carregar</button>
+        <button onClick={enviar} className="btn btn-primary">
+          Carregar
+        </button>
       </div>
       {movieReviewList.map((val) => {
         return (
@@ -91,6 +95,7 @@ function App() {
                 type="text"
                 id="updateInput"
                 className="form-control"
+                placeholder="Atualizar a análise do filme"
                 onChange={(e) => {
                   setNewReview(e.target.value);
                 }}
