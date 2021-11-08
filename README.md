@@ -69,8 +69,9 @@ $ cd client && npm start
 
 <h2 align="center">Como Usar</h2>
 <p>Dentro do projeto você verá dois inputs pedindo para informar o nome e a análise do filme, logo em seguida clique no botão "carregar" para adicionar o filme</p>
-<img src="./assets/home.png"/>
+<img src="./assets/home.jpg"/>
 <p>Para excluir um filme ou atualizar uma análise lembre-se de reiniciar a página para carregar as mudanças</p>
+<img src="./assets/add.jpg"/>
 
 <h2>Devs</h2>
 - Camili Martins
