@@ -24,7 +24,7 @@ Sumário
 
 <h2 align="center">Tecnologias</h2>
 <ul>
-    <li>![Badge](https://img.shields.io/badge/react-v17.0.2-yellow)</li>
+    <li><img src="https://img.shields.io/badge/react-v17.0.2-yellow"/></li>
     <li>https://img.shields.io/badge/axios-v0.24.0-blue</li>
     <li>https://img.shields.io/badge/bootstrap-v5.1.3-blueviolet</li>
     <li>https://img.shields.io/badge/cors-v2.8.5-lightgrey</li>
