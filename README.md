@@ -23,14 +23,16 @@ Sumário
 
 
 <h2 align="center">Tecnologias</h2>
-- https://img.shields.io/badge/react-v17.0.2-yellow
-- https://img.shields.io/badge/axios-v0.24.0-blue
-- https://img.shields.io/badge/bootstrap-v5.1.3-blueviolet
-- https://img.shields.io/badge/cors-v2.8.5-lightgrey
-- https://img.shields.io/badge/express-v4.17.1-orange
-- https://img.shields.io/badge/mysql-v2.18.1-brightgreen
-- https://img.shields.io/badge/mysql2-v2.3.2-green
-- https://img.shields.io/badge/nodemon-v2.0.14-yellowgreen
+<ul>
+    <li>https://img.shields.io/badge/react-v17.0.2-yellow</li>
+    <li>https://img.shields.io/badge/axios-v0.24.0-blue</li>
+    <li>https://img.shields.io/badge/bootstrap-v5.1.3-blueviolet</li>
+    <li>https://img.shields.io/badge/cors-v2.8.5-lightgrey</li>
+    <li>https://img.shields.io/badge/express-v4.17.1-orange</li>
+    <li>https://img.shields.io/badge/mysql-v2.18.1-brightgreen</li>
+    <li>https://img.shields.io/badge/mysql2-v2.3.2-green</li>
+    <li>https://img.shields.io/badge/nodemon-v2.0.14-yellowgreen</li>
+</ul>
 
 <h2 align="center">Instalação</h2>
 
