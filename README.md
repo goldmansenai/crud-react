@@ -11,7 +11,7 @@ Sumário
    * [Sobre](#Sobre)
    * [Pre Requisitos](#pre-requisitos)
    * [Tecnologias](#tecnologias)
-   * [Instalação](#instalacao)
+   * [Instalação](#instalação)
    * [Como usar](#como-usar)
    * [Devs](#devs)
 <!--te-->
@@ -68,6 +68,7 @@ $ cd client && npm start
 ```
 
 <h2 align="center">Como Usar</h2>
-<p>Dentro do projeto você verá dois inputs pedindo para informar o nome e a análise do filme, logo em seguida clique no botão</p>
+<p>Dentro do projeto você verá dois inputs pedindo para informar o nome e a análise do filme, logo em seguida clique no botão "carregar" para adicionar o filme</p>
+<p>Para excluir um filme ou atualizar uma análise lembre-se de reiniciar a página para carregar as mudanças</p>
 
 <h2>Devs</h2>
